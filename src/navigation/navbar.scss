@@ -1,0 +1,98 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    .nav-container{
+        display: flex;
+        width: var(--main-width);
+        margin: 0 auto;
+
+
+        .mobile-links{
+            display: none;
+        }
+
+        .logo{
+
+            h1{
+                font-size: 1.5rem;
+                color: var(--text-color-1);
+            }
+        }
+
+        .links{
+
+            &.desktop{
+                display: flex;
+                height: fit-content;
+                margin: auto 0 auto auto;
+                gap: 18px;
+
+                   a{
+                        padding: 4px 0;
+                        font-size: 0.95rem;
+                        transition: var(--global-transition);
+                        text-decoration: none;
+                        color: var(--text-color-inactive);
+                        &.active{
+                            color: var(--text-color-1);
+                        }
+
+                        &:hover{
+                            color: var(--text-color-1);
+                        }
+
+                        &:last-child{
+                            margin-left: 10px;
+                            background-color: var(--text-color-2);
+                            padding: 4px 6px 4px 10px;
+                            border-radius: 20px;
+                            font-size: 0.95rem;
+                            color: var(--background-color-2);
+                            svg{
+                                font-size: 1rem;
+                                vertical-align:sub;
+                            }
+
+                            &:hover{
+                                background-color: var(--text-color-3);
+                            }
+                        }
+                   }
+            }
+
+            &.mobile{
+                display: none;
+            }
+        }
+
+        .menu{
+            display: none;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            margin: auto 0 auto auto;
+
+            .line{
+                height: 2px;
+                width: 30px;
+                border-radius: 4px;
+                background-color: var(--text-color-1);
+                margin: 8.5px 5px;
+                transition: var(--global-transition);
+            
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navbar .nav-container .menu{
+        display: flex;
+    }
+}
